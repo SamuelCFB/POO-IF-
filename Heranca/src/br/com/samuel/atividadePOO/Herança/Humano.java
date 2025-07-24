@@ -11,11 +11,11 @@ public class Humano extends SerVivo{
 		return this.etnia;
 	}
 	
-	public void setEtinia(String etnia){
+	public void setEtnia(String etnia){
 		this.etnia = etnia;
 	}
 	
-	public String getNome(){
+	public String getNacionalidade() {
 		return this.nacionalidade;
 	}
 	
@@ -40,18 +40,33 @@ public class Humano extends SerVivo{
 		this.idade = idade;
 	}
 	
-	Humano(String nome) {
-		super(nome);
-		setReino("Animalia");
-		setGenero("Homo");
-		setEpitetoEsp("sapiens");
+	public void getInfoHum() {
+		System.out.println("--------------CARACTERÍSTICAS--------------");
+		System.out.println("NOME: \u001B[32m" + getNome());
+		System.out.println("\u001B[0mETNIA: \u001B[32m" + getNome());
+		System.out.println("\u001B[0mNACIONALIDADE: \u001B[32m" + getNacionalidade());
+		System.out.println("\u001B[0mSANGUE: \u001B[32m" + getSangue());
+		System.out.println("\u001B[0mIDADE ATUAL: \u001B[32m" + getIdade() + "\u001B[0m \n");
+		try { Thread.sleep(1000); } catch (InterruptedException e){}
 	}
-	Humano() {
-		System.out.println("Seres Humanos devem ter um nome:");
-		setNome(scan.nextLine());
-		setReino("Animalia");
-		setGenero("Homo");
-		setEpitetoEsp("sapiens");
+	
+	public Humano(String nome, String etnia, String nacionalidade, String tipoSangue, String fatorRh, int idade) {
+		super(nome, "Animalia", "Homo", "sapiens");
+		
+		setEtnia(etnia);
+		setNacionalidade(nacionalidade);
+		setSangue(tipoSangue, fatorRh);
+		setIdade(idade);
+		getInfoHum();
 	}
-
+	
+	public Humano(String etnia, String nacionalidade, String tipoSangue, String fatorRh, int idade) {		
+		super("Animalia", "Homo", "sapiens"); 
+		
+		setEtnia(etnia);
+		setNacionalidade(nacionalidade);
+		setSangue(tipoSangue, fatorRh);
+		setIdade(idade);
+		getInfoHum();
+	}
 }
