@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="public1.Homem"/>
+    <fullyQualifiedTypeName name="animalAbstractions.Animal"/>
+    <fullyQualifiedTypeName name="animalAbstractions.Ave"/>
+    <fullyQualifiedTypeName name="animalAbstractions.Mamifero"/>
 </qualifiedTypeNameHistroy>
